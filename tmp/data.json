@@ -1,20 +1,20 @@
 [
     {
-        "language": "HTML"
+        "name": "HTML"
     },
     {
-        "language": "CSS"
+        "name": "CSS"
     },
     {
-        "language": "Responsive Design"
+        "name": "Responsive Design"
     },
     {
-        "language": "Javascript"
+        "name": "Javascript"
     },
     {
-        "language": "PHP"
+        "name": "PHP"
     },
     {
-        "language": "Lavarel"
+        "name": "Lavarel"
     }
 ]

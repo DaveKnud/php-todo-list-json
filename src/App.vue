@@ -6,6 +6,11 @@ export default {
       programmingLanguages: []
     };
   },
+  methods: {
+    onSubmit() {
+      console.error("onSubmit");
+    }
+  },
   mounted() {
     axios.get('http://localhost/Boolean%20projects/php-todo-list-json/tmp/')
       .then(response => {
@@ -21,9 +26,11 @@ export default {
     <ul>
       <li v-for="language in programmingLanguages" :key="index">
         {{ language.name }}
-
       </li>
     </ul>
+    <form @submit.prevent="onSubmit">
+      <input type="submit" value="Add new programming language">
+    </form>
   </div>
 </template>
 

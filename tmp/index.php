@@ -6,13 +6,7 @@
     
     header('Content-Type: application/json');
 
-    $programmingLanguages  = [
-        ['name' => 'HTML'],
-        ['name' => 'CSS'],
-        ['name' => 'Responsive Design'],
-        ['name' => 'Javascript'],
-        ['name' => 'PHP'],
-        ['name' => 'Lavarel'],
-    ];
-        echo json_encode($programmingLanguages );
+    $programmingLanguagesString  = file_get_contents('data.json');
+    $programmingLanguages = json_decode($programmingLanguagesString);
+    echo json_encode($programmingLanguages);
     ?>

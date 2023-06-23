@@ -17,9 +17,15 @@ export default {
         headers: { 'Content-Type': 'multipart/form-data' }
       };
       axios.post(url, data, headers)
-        .then(response => this.programmingLanguages = response.data)
+        .then(response => {
+          this.programmingLanguages = response.data;
+          this.newProgrammingLanguage.name = ""
+        })
         .catch(error => console.error("error", error));
-    }
+    },
+    deleteLanguage() {
+      console.log("delete");
+    },
   },
   mounted() {
     axios.get('http://localhost/Boolean%20projects/php-todo-list-json/tmp/index.php')
@@ -36,6 +42,7 @@ export default {
     <ul>
       <li v-for="language in programmingLanguages" :key="index">
         {{ language.name }}
+        <button style="color: red; background-color: rgb(0, 0, 0);" @click="deleteLanguage()"> X</button>
       </li>
     </ul>
     <form @submit.prevent="onSubmit">
